@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: test
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: tx-group
+mybatis:
+  type-aliases-package: com.xiayu.provider.domain
+  mapper-locations: classpath:mapper/*.xml
+
+
+server:
+  port: 9001
+
+
+# jasypt 加密的根（盐）test
+jasypt:
+  encryptor:
+    password: xiayu
+
+# 雪花算法参数
+SnowFlake:
+  # 数据中心 5bit
+  datacenterId: 10
+  # 机器码 5bit
+  machineId: 10

@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: provider-user
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+
+  output:
+    ansi:
+      enabled: always
+
+dubbo:
+  scan:
+    base-packages: com.demo.provider.service
+  protocol:
+    name: dubbo
+    port: -1
+    serialization: kryo
+  registry:
+    address: nacos://47.106.81.186:8848
+    provider:
+      loadbalance: roundrobin  #负载均衡方式  轮循
+      # random 随机，roundrobin 轮循，leastactive 最少活跃调用数，consistenthash一致性 Hash
+
+
+
+
